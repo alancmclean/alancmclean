@@ -1,0 +1,141 @@
+@import url(material.css);
+
+#wrap{
+	max-width: 60vw; 
+}
+.mdl-grid .mdl-grid.mdl-grid--nesting {
+  padding: 0;
+  margin: 0 -8px;
+}
+
+@media only screen 
+	and (min-device-width : 375px) 
+	and (max-device-width : 667px) {
+		#wrap{
+			max-width:100%;
+		}
+	}
+
+.work-tags{
+	margin: 1em 0;
+	text-transform: uppercase;
+	font-weight:100;
+	/*line-height:.5em;*/
+}
+.work-item{
+	margin-bottom:3em;
+	padding-bottom:2em;
+	border-bottom:1px solid #aaa;
+}
+
+.work-item p{
+	font-size:16px;
+}
+.work-item h4{
+	margin-top:0;
+}
+.work-item h5{
+	margin-bottom:12px;
+}
+.work-carousel-item-portrait-mini{
+	margin-bottom: 15px;
+}
+
+.focused{
+	min-height: 85vh;
+	/*background:#ddd;*/
+}
+
+.focused p{
+	font-size: 3vh;
+	line-height:5vh;
+	font-weight:100;
+}
+
+.navbar{
+	position:sticky;
+	background:#fff;
+	border-top: 2px solid #aaa;
+	display: block;
+}
+
+.navbar a{
+	display:inline-block;
+	padding:10px 15px;
+	transition: background .45s;
+	background:#fff;
+}
+
+.navbar a:hover{
+	/*font-weight:bold;*/
+	color:#000;
+	background:#ddd;
+}
+
+.navbar a.selected{
+	font-weight:bold;
+}
+
+/* carousel */
+.work-carousel{
+	overflow-x: auto;
+	width:100%;
+	overflow-y:hidden;
+	overflow-x:scroll;
+	/*max-height:500px;*/
+}
+.work-carousel-item{
+	width:100%;
+}
+.work-carousel-item.focused{
+	/*background:#ddd;*/
+	/*max-width:45%;*/
+}
+
+/* about */
+.bio-pic{
+	width:100%;
+	max-width:300px;
+	float: left;
+	border:12px solid #fff;
+	box-shadow: 0 0 12px -1px rgba(0,0,0,.12);
+	margin-right: 20px;
+}
+
+h1{
+	margin-top:12px;
+	margin-bottom:0;
+}
+
+header p:first-of-type{
+	font-size:4.9vh;
+	margin-bottom:4.9vh;
+}
+
+.offsite{
+	background: rgb(0,0,0);
+	display:inline-block;
+	margin: 20px 5px 0 0;
+	/*padding: 30px;*/
+	border-radius:50%;
+	height: 45px;
+	width: 45px;
+	text-indent:-1000;
+	border:3px solid #fff;
+}
+
+.offsite:hover{
+	border:3px solid rgb(64,196,255);
+	/*box-shadow: 0 0 12px rgba(0,0,0,.25); */
+}
+
+.twitter{
+	background: rgb(0,0,0) url(../images/twitter.svg) no-repeat 57% 55%;
+	background-size: 55%;
+}
+
+.github{
+	background: url(../images/github.svg) no-repeat 0 center;
+	background-size: 100%;
+	padding-left:2px;
+}
