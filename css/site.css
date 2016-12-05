@@ -1,5 +1,13 @@
 @import url(material.css);
 
+a{
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
 #wrap{
 	max-width: 60vw; 
 }
