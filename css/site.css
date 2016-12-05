@@ -147,3 +147,8 @@ header p:first-of-type{
 	background-size: 100%;
 	padding-left:2px;
 }
+
+.material-icons{
+  vertical-align: middle;
+  margin-top: -4px;
+}
