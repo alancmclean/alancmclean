@@ -51,7 +51,6 @@ a:hover{
 
 .focused{
 	min-height: 85vh;
-	/*background:#ddd;*/
 }
 
 .focused p{
@@ -88,16 +87,9 @@ a:hover{
 .work-carousel{
 	overflow-x: auto;
 	width:100%;
-	overflow-y:hidden;
-	overflow-x:scroll;
-	/*max-height:500px;*/
 }
 .work-carousel-item{
 	width:100%;
-}
-.work-carousel-item.focused{
-	/*background:#ddd;*/
-	/*max-width:45%;*/
 }
 
 /* about */
