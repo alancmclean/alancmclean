@@ -121,6 +121,8 @@ header p:first-of-type{
 	font-size:6.9vh;
 	margin-bottom:5vh;
 	line-height:105%;
+	margin-top:50px;
+	font-weight:400;
 }
 
 .offsite{
