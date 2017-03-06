@@ -59,6 +59,27 @@ a:hover{
 	margin-bottom: 15px;
 }
 
+@media only screen 
+	and (min-device-width : 375px) 
+	and (max-device-width : 667px) {
+		.work-carousel{
+			margin: 0 !important;
+		}
+		.work-tags{
+			text-align:center;
+		}
+		.work-item h4{
+			text-align:center;	
+		}
+		#recognition h3,#about h3{
+			text-align:center;		
+		}
+		.bio-pic{
+			margin-right: 0;
+		}
+	}
+
+
 .focused{
 	min-height: 85vh;
 }
