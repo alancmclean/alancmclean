@@ -9,7 +9,7 @@ a:hover{
 }
 
 #wrap{
-  max-width: 60vw; 
+  max-width: 70vw; 
 }
 .mdl-grid .mdl-grid.mdl-grid--nesting {
   padding: 0;
@@ -24,16 +24,26 @@ a:hover{
     }
   }
 
+li{
+  margin-bottom:15px;
+}
+
+
+li li{
+  margin-bottom:0;
+}
+
+
 .work-tags{
 
   color:#aaa;
   /*text-transform: uppercase;*/
-  font-weight:100;
-  line-height:3.4em;
+  font-weight: 100;
+  line-height: 2.4em;
   /*font-size: 2vh;*/
   padding: 0 15px 0 0;
   text-align: right;
-  font-size:1em;
+  font-size: 1em;
   
 }
 .work-item{
