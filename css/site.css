@@ -1,7 +1,13 @@
 @import url(material.css);
 
+body{
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 a{
 	text-decoration:none;
+	color:#343434;
+	font-weight: 400;
 }
 
 a:hover{
@@ -25,7 +31,7 @@ a:hover{
 	}
 
 .work-tags{
-	margin: 1em 0;
+	margin: 1em 0 0;
 	text-transform: uppercase;
 	font-weight:100;
 	/*line-height:.5em;*/
@@ -46,8 +52,8 @@ a:hover{
 }
 .work-item h4{
 	font-size:2em;
-	margin-bottom:0;
-	line-height:auto;
+	margin: 10px 0 24px;
+	/*line-height:auto;*/
 }
 .work-item h5{
 	margin-bottom:12px;
@@ -85,33 +91,35 @@ font-size: 1.25em;
 
 
 .focused{
-	min-height: 85vh;
+	min-height: 90%;
 }
 
 .focused p{
-	font-size: 3vh;
-	line-height:5vh;
-	font-weight:100;
+	    font-size: 1.8em;
+    line-height: 1.35em;
+    font-weight: 200;
+    letter-spacing: 0.8;
+
 }
 
 .navbar{
 	position:sticky;
 	background:#fff;
-	border-top: 2px solid #aaa;
+	border-top: 1px solid #333;
 	display: block;
 }
 
 .navbar a{
 	display:inline-block;
 	padding:10px 15px;
-	transition: background .45s;
+	/*transition: background .45s;*/
 	background:#fff;
 }
 
 .navbar a:hover{
 	/*font-weight:bold;*/
 	color:#000;
-	background:#ddd;
+	/*background:#ddd;*/
 }
 
 .navbar a.selected{
@@ -127,13 +135,28 @@ font-size: 1.25em;
 	width:100%;
 }
 
+
+
+.work-carousel a{
+/*	transition: box-shadow .7s;
+	box-shadow: 0 0 18px 0 rgba(0,0,0,0);*/
+	display:block;
+}
+
+.work-carousel a:hover{
+	/*box-shadow: 0 0 18px 0px rgba(0,0,0,.06);*/
+
+}
+
+
+
 /* about */
 .bio-pic{
 	width:25%;
 	max-width:300px;
 	float: left;
 	/*border:12px solid #fff;*/
-	box-shadow: 0 0 12px -1px rgba(0,0,0,.12);
+	/*box-shadow: 0 0 12px -1px rgba(0,0,0,.12);*/
 	margin: 0 20px 20px 0;
 }
 
@@ -143,11 +166,11 @@ h1{
 }
 
 header p:first-of-type{
-	font-size:6.9vh;
-	margin-bottom:5vh;
-	line-height:105%;
-	margin-top:50px;
-	font-weight:100;
+font-size: 3em;
+    margin-bottom: .5em;
+    /* line-height: 105%; */
+    margin-top: 50px;
+    font-weight: 500;
 }
 
 .offsite{
