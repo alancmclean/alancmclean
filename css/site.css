@@ -91,7 +91,7 @@ font-size: 1.25em;
 
 
 .focused{
-	min-height: 90%;
+	min-height: 87%;
 }
 
 .focused p{
@@ -105,7 +105,7 @@ font-size: 1.25em;
 .navbar{
 	position:sticky;
 	background:#fff;
-	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
 	display: block;
 }
 
