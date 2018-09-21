@@ -41,8 +41,8 @@ a:hover{
 	
 }
 .work-item{
-	margin-bottom:3em;
-	padding-bottom:2em;
+	margin-bottom: 3em;
+	padding-bottom: 2em;
 	/*border-bottom:1px solid #aaa;*/
 }
 
@@ -75,15 +75,15 @@ font-size: 1.25em;
 		.work-carousel{
 			margin: 0 !important;
 		}
-		.work-tags{
+/*		.work-tags{
 			text-align:center;
 		}
 		.work-item h4{
 			text-align:center;	
-		}
-		#recognition h3,#about h3{
+		}*/
+/*		#recognition h3,#about h3{
 			text-align:center;		
-		}
+		}*/
 		.bio-pic{
 			margin-right: 0;
 		}
@@ -204,4 +204,12 @@ font-size: 3em;
 .material-icons{
   vertical-align: middle;
   margin-top: -4px;
+}
+
+#recognition ul{
+	padding-left: 20px;	
+}
+
+#recognition li{
+	margin-bottom: 1em;
 }
