@@ -67,7 +67,7 @@ li li{
 }
 
 .work-item p{
-  font-size: 1.2em;
+  font-size: 1em;
   line-height:1.7em;
   font-weight:100;
 }
@@ -137,10 +137,10 @@ li li{
 
 /* about */
 .bio-pic{
-  width:100%;
+  width:25%;
   max-width:300px;
   float: left;
-  border:12px solid #fff;
+  /*border:12px solid #fff;*/
   box-shadow: 0 0 12px -1px rgba(0,0,0,.12);
   margin: 0 20px 20px 0;
 }
