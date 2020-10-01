@@ -10,25 +10,97 @@
 </head>
 <body>
 
-<section class="animation">
-  
-</section>
-<section class="description">
-  <div class="text">
-    <p>My name is Alan McLean</p>
-    <p>I help teams build experiences that feel personal, inspire action and improve your life. I currently work at Google on the Wellbeing Lab.</p>
-  </div>
 
-  <div class="subtext">
-    <p>Previously I’ve led visualization design at Fitbit, designed and built athlete experiences at Strava and served as a Graphics Editor  at the New York Times.</p>
+<div class="container">
+  <section class="description">
+    <div class="text">
+      <p>Alan McLean is a designer with 10+ years of experience designing for wellbeing.</p>
+      <p>I help teams create experiences that feel personal, inspire action and improve your life. I currently work at Google on the Wellbeing Lab.</p>
+    </div>
 
-    <p><a href="https://twitter.com/alanmclean">Ping me</a> to walk through my portfolio.</p>
-  </div>
-</section>
+    <div class="subtext">
+      <p>Previously I’ve led visualization design at Fitbit, designed and built athlete experiences at Strava and served as a Graphics Editor  at the New York Times.</p>
+
+      <p><a href="https://twitter.com/alanmclean">Ping me</a> to walk through my portfolio.</p>
+    </div>
+  </section>
+
+  <section class="animation">
+    <canvas class="paintarea"></canvas>
+  </section>
+
+</div>
+
+<script type="text/javascript">
+
+var vis = function(){
+  return{
+    a: Math.random() + -3.0,
+    a2: -2.1763,
+    b: 1.5377,
+    c: -0.3161,
+    d: -2.3095,
+    init: function(){
+      let box     = document.querySelector('.animation');
+      this.width  = parseInt(box.clientWidth, 10);
+      this.height = parseInt(window.innerHeight, 10);
+      let canvas  = document.querySelector('.paintarea');
+      let dpr = window.devicePixelRatio || 1;
+
+      this.scale  = this.width / (2 * Math.PI);
+
+      canvas.width    = this.width * dpr
+      canvas.height   = this.height * dpr
+      canvas.style.width = this.width;
+      canvas.style.height = this.height;
+
+      this.ctx    = canvas.getContext('2d');
+      this.ctx.scale(dpr, dpr);
+      this.render()
+    },
+    render: function(){
+
+      this.ctx.fillStyle = '#111'
+      this.ctx.fillRect(0, 0, this.width , this.height);
+
+      // console.log(this.width)
+      
+      // this.ctx.fillStyle = "#111";
+      
+      
+      this.ctx.translate(this.width / 2, this.height * .7);
+      this.ctx.scale(this.height / (2 * Math.PI), this.height / (2 * Math.PI));
+      
+      this.ctx.fillStyle = "rgba(255,255,255,0.25)";
+      let x0 = 
+        0,
+        y0 = 0,
+        x1,
+        y1,
+        i = 0;
+      
 
 
+
+      while (i < 1e7) {
+        let t = (1e7 / i);
+        // this.a += .001
+
+        x1 = Math.sin(this.a * y0) + this.c * Math.cos(this.a * x0);
+        y1 = Math.sin(this.b * x0) + this.d * Math.cos(this.b * y0);
+        this.ctx.fillRect((x0 = x1), (y0 = y1), 0.001, 0.001);
+        if (++i % 1e6 === 0) return
+      }
+    }
+  }
+}();
+
+vis.init();
+
+
+</script>
 	
-<script>
+<!-- <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -37,7 +109,7 @@
   ga('create', 'UA-88525006-1', 'auto');
   ga('send', 'pageview');
 
-</script>
+</script> -->
 
 
 
