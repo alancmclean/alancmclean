@@ -5,8 +5,87 @@
   <title>Alan McLean</title>
   <meta name="description" content="Alan McLean is a designer working in San Francisco">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,700&display=swap" rel="stylesheet"> -->
+  <!-- <link rel="stylesheet" href="css/site.css"> -->
+  <style type="text/css">
+    html{
+  height:100%;  
+}
+body{
+  background:#111;
+  font-family: 'EB Garamond', serif;
+  margin:0;
+  padding:0;
+  color:#F2F2F2;
+  height:100%;
+}
+
+.container{
+  position: relative;
+  height:100%;
+  height:100%;
+}
+
+.description{
+  width: 50%;
+  padding: 4rem;
+  box-sizing: border-box;
+  display:block;
+  z-index:2;
+}
+
+/*.subtext:before{
+  content:" ";
+  width:20%;
+  height:3px;
+  background: #F2F2F2;
+  display: inline-block;
+}*/
+
+.animation{
+  /*background:#222;*/
+  width:100%;
+  position: absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  z-index:-1;
+}
+
+.text{
+  margin: 0rem 0 4rem;
+  font-size: 2.2rem;
+  box-sizing: border-box;
+}
+.text p:first-of-type{
+  margin-top:0;
+  padding-top:0;
+}
+
+.subtext{
+  margin: 4rem 0;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  color:#bdbdbd;
+}
+
+a{
+  color:#fff;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 800px) {
+  .description {
+    width:100%;
+  }
+  .animation {
+    width:100%;
+    height:100px;
+    top:0;
+    display: none;
+  }
+}
+  </style>
 </head>
 <body>
 
@@ -14,12 +93,12 @@
 <div class="container">
   <section class="description">
     <div class="text">
-      <p>Alan McLean is a designer with 10+ years of experience designing for wellbeing.</p>
+      <p>Alan McLean has 10+ years of experience designing for wellbeing.</p>
       <p>I help teams create experiences that feel personal, inspire action and improve your life. I currently work at Google on the Wellbeing Lab.</p>
     </div>
 
     <div class="subtext">
-      <p>Previously I’ve led visualization design at Fitbit, designed and built athlete experiences at Strava and served as a Graphics Editor  at the New York Times.</p>
+      <p>Previously I’ve led visualization design at Fitbit, designed and built athlete experiences at Strava and served as a Graphics Editor at the New York Times.</p>
 
       <p><a href="https://twitter.com/alanmclean">Ping me</a> to walk through my portfolio.</p>
     </div>
@@ -35,11 +114,14 @@
 
 var vis = function(){
   return{
-    a: Math.random() + -3.0,
+    // a: Math.random() + -3.0,
+    a: (Math.random() * (-3.0 - -2.3) + -2.3).toFixed(4),
     a2: -2.1763,
     b: 1.5377,
     c: -0.3161,
     d: -2.3095,
+    batchSize: 1000,
+
     init: function(){
       let box     = document.querySelector('.animation');
       this.width  = parseInt(box.clientWidth, 10);
@@ -47,7 +129,7 @@ var vis = function(){
       let canvas  = document.querySelector('.paintarea');
       let dpr = window.devicePixelRatio || 1;
 
-      this.scale  = this.width / (2 * Math.PI);
+
 
       canvas.width    = this.width * dpr
       canvas.height   = this.height * dpr
@@ -55,49 +137,68 @@ var vis = function(){
       canvas.style.height = this.height;
 
       this.ctx    = canvas.getContext('2d');
-      this.ctx.scale(dpr, dpr);
+      this.ctx.translate(this.width * 1.5, this.height * 1.5);
+      this.scale = this.height / Math.PI;
+
+      this.ctx.scale(this.scale, this.scale);
+
 
       // need to fix this somehow, so hacky
-      if(this.a > -2.3){
+      if(this.a   > -2.3){
         this.a = 2.876
       }
-      this.render()
+      this.start  = 0;
+      this.step   = 0;
+      this.x0     = 0;
+      this.y0     = 0;
+      this.x1;
+      this.y1;
 
+      requestAnimationFrame(this.render.bind(this))
 
     },
-    render: function(){
-
-      this.ctx.fillStyle = '#111'
-      this.ctx.fillRect(0, 0, this.width , this.height);
+    render: function(timestamp){
+      if (this.start === undefined){
+        this.start = timestamp;
+      }
+      // console.log(this.x0)
+      const elapsed = timestamp - this.start;
+      
+      
+      // this.ctx.fillStyle = '#111'
+      // this.ctx.fillRect(0, 0, this.width , this.height);
 
       // console.log(this.width)
       
       // this.ctx.fillStyle = "#111";
       
       
-      this.ctx.translate(this.width / 2, this.height * .7);
-      this.ctx.scale(this.height / (2 * Math.PI), this.height / (2 * Math.PI));
       
-      this.ctx.fillStyle = "rgba(255,255,255,0.65)";
-      let x0 = 
-        0,
-        y0 = 0,
-        x1,
-        y1,
-        i = 0;
-      
+      this.ctx.fillStyle = "rgba(255,255,255,0.6)";
 
 
-
-      while (i < 1e7) {
-        let t = (1e7 / i);
-        // this.a += .001
-
-        x1 = Math.sin(this.a * y0) + this.c * Math.cos(this.a * x0);
-        y1 = Math.sin(this.b * x0) + this.d * Math.cos(this.b * y0);
-        this.ctx.fillRect((x0 = x1), (y0 = y1), 0.001, 0.001);
-        if (++i % 1e6 === 0) return
+      let i = 0
+      while (i < this.batchSize) {
+        this.x1 = Math.sin(this.a * this.y0) + this.c * Math.cos(this.a * this.x0);
+        this.y1 = Math.sin(this.b * this.x0) + this.d * Math.cos(this.b * this.y0);
+        this.ctx.fillRect((this.x0 = this.x1), (this.y0 = this.y1), 0.002, 0.002);
+        i++
       }
+      if(elapsed < 8000){
+        requestAnimationFrame(this.render.bind(this))
+      }
+      
+    },
+    reset: function(){
+      this.ctx.save()
+
+
+
+      this.ctx.setTransform(1,0,0,1,0,0);
+      this.ctx.clearRect(0,0, this.ctx.canvas.width, this.ctx.canvas.height);
+      this.a = (Math.random() * (-3.0 - -2.3) + -2.3).toFixed(4)
+
+      this.ctx.restore()
     }
   }
 }();
