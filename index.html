@@ -56,7 +56,14 @@ var vis = function(){
 
       this.ctx    = canvas.getContext('2d');
       this.ctx.scale(dpr, dpr);
+
+      // need to fix this somehow, so hacky
+      if(this.a > -2.3){
+        this.a = 2.876
+      }
       this.render()
+
+
     },
     render: function(){
 
