@@ -173,17 +173,17 @@ var vis = function(){
       
       
       
-      this.ctx.fillStyle = "rgba(50,50,50,0.7)";
+      this.ctx.fillStyle = "rgba(100,100,100,0.9)";
 
 
       let i = 0
       while (i < this.batchSize) {
         this.x1 = Math.sin(this.a * this.y0) + this.c * Math.cos(this.a * this.x0);
         this.y1 = Math.sin(this.b * this.x0) + this.d * Math.cos(this.b * this.y0);
-        this.ctx.fillRect((this.x0 = this.x1), (this.y0 = this.y1), 0.002, 0.002);
+        this.ctx.fillRect((this.x0 = this.x1), (this.y0 = this.y1), 0.001, 0.001);
         i++
       }
-      if(elapsed < 8000){
+      if(elapsed < 10000){
         requestAnimationFrame(this.render.bind(this))
       }
       
