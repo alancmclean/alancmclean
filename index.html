@@ -32,6 +32,7 @@ body{
   box-sizing: border-box;
   display:block;
   z-index:2;
+  position:fixed;
 }
 
 /*.subtext:before{
@@ -43,13 +44,62 @@ body{
 }*/
 
 .animation{
-  /*background:#222;*/
+  /*background:#333;*/
   width:100%;
-  position: absolute;
+  position: fixed;
   right:0;
   top:0;
   bottom:0;
   z-index:-1;
+}
+
+.portfolio{
+  width:45%;
+  position: absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  z-index:1; 
+  padding-top:4rem;
+  /*background:#ddd;*/
+}
+
+
+.portfolio .work{
+  margin: 0 0 3em;
+}
+
+.portfolio .hed{
+  font-size: .8rem;
+  margin: 0;
+  padding:0 0 .75rem;
+  font-family: sans-serif;
+  font-weight:100;
+  text-transform: uppercase;
+  color:#ebebeb;
+}
+
+.portfolio .asset{
+  width: 90%;
+  box-shadow: 0 0 12px rgba(0,0,0,.4);
+  /*filter: grayscale(100%);*/
+  border-radius:8px;
+}
+
+.portfolio .inline-asset{
+  max-width: 28%;
+  box-shadow: 0 0 12px rgba(0,0,0,.4);
+  /*filter: grayscale(100%);*/
+  border-radius:8px;  
+  display:inline-block;
+  vertical-align: top;
+  margin: 0 1rem 0 0;
+}
+
+.portfolio .inline-asset:hover,
+.portfolio .asset:hover{
+  transition: filter .5s;
+  filter: grayscale(0%);
 }
 
 .text{
@@ -62,12 +112,6 @@ body{
   padding-top:0;
 }
 
-.subtext{
-  margin: 4rem 0;
-  font-size: 1.5rem;
-  box-sizing: border-box;
-  color:#bdbdbd;
-}
 
 a{
   color:#fff;
@@ -106,6 +150,69 @@ a{
   <section class="animation">
     <canvas class="paintarea"></canvas>
   </section>
+  <section class="portfolio">
+    <!-- <h3>Selected Works</h3> -->
+
+    <div class="work">
+      <h4 class="hed">Google – Material Design Wellbeing Guidance</h4>
+      <img src="images/google/flowers.gif" class="asset">
+    </div>
+
+    <div class="work">
+      <h4 class="hed">Google – Mental Health Study</h4>
+      <img src="images/mood.png" class="asset">
+    </div>    
+
+    <div class="work">
+      <h4 class="hed">Fitbit – Cardio Fitness Score</h4>
+      <img src="images/cardio-fitness/v02max-run-value-with-button.png" class="inline-asset">
+      <img src="images/cardio-fitness/v02max-fullscreen-run-pg2.png" class="inline-asset">
+      <img src="images/cardio-fitness/v02max-fullscreen-run-pg4.png" class="inline-asset">
+    </div>
+
+    <div class="work">
+      <h4 class="hed">Fitbit – Smart Track Goals</h4>
+      <img src="images/smarttrack/goal-5.png" class="asset">
+    </div>
+
+    <div class="work">
+      <h4 class="hed">Fitbit – Reminders to Move</h4>
+      <img src="images/sedentary/rtm.png" class="asset">
+    </div>
+
+    <div class="work">
+      <h4 class="hed">Strava – Training Log</h4>
+      <img src="images/strava/strava-1.png" class="asset">
+    </div>
+    <div class="work">
+      <h4 class="hed">NYT – The Marathon Route’s Evolving Neighborhoods</h4>
+      <img src="images/nyc/nyc-2.jpg" class="asset">
+    </div>
+    <div class="work">
+      <h4 class="hed">NYT – The Guantanamo Docket</h4>
+      <img src="images/gitmo/gitmo-1.png" class="asset">
+    </div>
+    <div class="work">
+      <h4 class="hed">NYT – Olympics Coverage</h4>
+      <img src="images/sprint/sprint-1.png" class="asset">
+    </div>
+    <div class="work">
+      <h4 class="hed">NYT – Elections Coverage</h4>
+      <img src="images/election-2012/election-2012-1.png" class="asset">
+    </div>
+    <div class="work">
+      <h4 class="hed">NYT – Girls Lead in Science Exam, but Not in the United States</h4>
+      <img src="images/science/science-1.png" class="asset">
+    </div>
+    <div class="work">
+      <h4 class="hed">NYT – Snowfall</h4>
+      <img src="images/snowfall/snowfall-1.png" class="asset">
+    </div>
+    <!-- <div class="work">
+      <h4 class="hed">Verily – Mental Health Study</h4>
+      <img src="" class="asset">
+    </div> -->
+  </section>
 
 </div>
 
@@ -136,8 +243,8 @@ var vis = function(){
       canvas.style.height = this.height;
 
       this.ctx    = canvas.getContext('2d');
-      this.ctx.translate(this.width * 1.5, this.height * 1.5);
-      this.scale = (this.height / Math.PI) * 2.0;
+      this.ctx.translate(this.width * 0.9, this.height * 1.5);
+      this.scale = (this.height / Math.PI) * 2.5;
 
       this.ctx.scale(this.scale, this.scale);
 
@@ -152,6 +259,8 @@ var vis = function(){
       this.y0     = 0;
       this.x1;
       this.y1;
+
+      this.ctx.globalCompositeOperation = 'multiply';
 
       requestAnimationFrame(this.render.bind(this))
 
@@ -173,7 +282,7 @@ var vis = function(){
       
       
       
-      this.ctx.fillStyle = "rgba(100,100,100,0.9)";
+      this.ctx.fillStyle = "rgba(255,255,255,0.6)";
 
 
       let i = 0
@@ -190,8 +299,6 @@ var vis = function(){
     },
     reset: function(){
       this.ctx.save()
-
-
 
       this.ctx.setTransform(1,0,0,1,0,0);
       this.ctx.clearRect(0,0, this.ctx.canvas.width, this.ctx.canvas.height);
