@@ -6,11 +6,11 @@
   <meta name="description" content="Alan McLean is a designer working in San Francisco">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-
+  <!-- <link rel="stylesheet" href="css/site.css"> -->
   <style type="text/css">
     html{
-      height:100%;  
-    }
+  height:100%;  
+}
 body{
   background:#111;
   font-family: 'EB Garamond', serif;
@@ -67,7 +67,6 @@ body{
 
 .portfolio .work{
   margin: 0 0 3em;
-  padding: 0 0 3em;
 }
 
 .portfolio .hed{
@@ -83,7 +82,7 @@ body{
 .portfolio .asset{
   width: 100%;
   box-shadow: 0 0 12px rgba(0,0,0,.4);
-  
+  /*filter: grayscale(100%);*/
   border-radius:8px;
 }
 
@@ -97,11 +96,11 @@ body{
   margin: 0 1rem 0 0;
 }
 
-/*.portfolio .inline-asset:hover,
+.portfolio .inline-asset:hover,
 .portfolio .asset:hover{
   transition: filter .5s;
-  
-}*/
+  filter: grayscale(0%);
+}
 
 .text{
   margin: 0rem 0 4rem;
@@ -118,28 +117,6 @@ a{
   color:#fff;
   font-weight: 500;
 }
-
-/*.work a:after {
-  content: "";
-  clear: both;
-  display: table;
-}*/
-
-.work a img{
-  transition: transform .4s;
-  transform: scale(1, 1);
-  /*filter: grayscale(100%);*/
-}
-
-.work a:hover img{
-  /*box-shadow: 0 0 0 5px black;*/
-  /*filter: grayscale(0%);*/
-  transform: scale(1.025, 1.025);
-}
-
-video:focus{
-    outline:none;
-  }
 
 @media only screen and (max-width: 800px) {
   .description {
@@ -168,8 +145,6 @@ video:focus{
     font-size: 1.5rem;
   }
 
-  
-
 }
   </style>
 </head>
@@ -179,9 +154,9 @@ video:focus{
 <div class="container">
   <section class="description">
     <div class="text">
-      <p>Hello! <br />I create experiences that are personal, inspire action and improve your life. You may be familiar with my work leading visualization design at Fitbit and Strava or as a Graphics Editor at the New York Times. These days you’ll find me leading emerging health and fitness opportunities for Google.</p>
+      <p>Hello! <br />I help teams create experiences that feel personal, inspire action and improve your life. You may be familiar with my work leading visualization design at Fitbit and Strava or as a Graphics Editor at the New York Times. These days you'll find me working at Google on the Wellbeing Lab.</p>
 
-         <p>Ping me on <a href="https://twitter.com/alanmclean">Twitter</a> if you’d like to chat.</p>
+         <p>Ping me on <a href="https://twitter.com/alanmclean">Twitter</a> if you want to chat.</p>
     </div>
 
     <!-- <div class="subtext"> -->
@@ -203,66 +178,53 @@ video:focus{
 
     <div class="work">
       <h4 class="hed">Google – Mental Health Study</h4>
-      <a href="https://www.projectbaseline.com/mood/"><img src="images/mood.png" class="asset"></a>
+      <img src="images/mood.png" class="asset">
     </div>    
 
     <div class="work">
       <h4 class="hed">Fitbit – Cardio Fitness Score</h4>
         <!-- <img src="images/cardio-fitness/v02max-fullscreen-demographic-pg-2.png" class="inline-asset"> --> 
-      <a href="https://blog.fitbit.com/cardiorespiratory-fitness/"><img src="images/cardio-fitness/onboarding-3.jpg" class="inline-asset"></a>
-      <a href="https://blog.fitbit.com/cardiorespiratory-fitness/"><img src="images/cardio-fitness/v02max-run-value-with-button.png" class="inline-asset"></a>
+      <img src="images/cardio-fitness/onboarding-3.jpg" class="inline-asset">
+      <img src="images/cardio-fitness/v02max-run-value-with-button.png" class="inline-asset">
     </div>
 
     <div class="work">
       <h4 class="hed">Fitbit – Smart Track Goals</h4>
-      <a href="https://www.fitbit.com/in/smarttrack"><img src="images/smarttrack/goal-5.png" class="asset"></a>
+      <img src="images/smarttrack/goal-5.png" class="asset">
     </div>
 
     <div class="work">
       <h4 class="hed">Fitbit – Reminders to Move</h4>
-      <a href="https://www.fitabase.com/blog/post/fitbit-reminders-to-move-show-impact/">
-        <img src="images/sedentary/rtm.png" class="asset">
-      </a>
+      <img src="images/sedentary/rtm.png" class="asset">
     </div>
 
     <div class="work">
       <h4 class="hed">Strava – Training Log</h4>
-      <a href="https://blog.strava.com/visualize-your-training-9954/"><img src="images/strava/strava-1.png" class="asset"></a>
+      <img src="images/strava/strava-1.png" class="asset">
     </div>
     <div class="work">
       <h4 class="hed">NYT – The Marathon Route’s Evolving Neighborhoods</h4>
-      <video width="100%" poster="images/nyc/nyc-2.jpg" controls>
-        <source src="https://static01.nyt.com/packages/flash/newsgraphics/2011/1105-marathon-demographics/20111105-marathon-dem.mp4" type="video/mp4">
-      </video>
-      <!-- <a href="https://archive.nytimes.com/www.nytimes.com/interactive/2011/11/05/nyregion/the-evolving-neighborhoods-along-the-marathon.html"> -->
-        
-      </a>
+      <img src="images/nyc/nyc-2.jpg" class="asset">
     </div>
     <div class="work">
       <h4 class="hed">NYT – The Guantanamo Docket</h4>
-      <a href="https://www.nytimes.com/interactive/projects/guantanamo">
-        <img src="images/gitmo/gitmo-1.png" class="asset">
-      </a>
+      <img src="images/gitmo/gitmo-1.png" class="asset">
     </div>
     <div class="work">
       <h4 class="hed">NYT – Olympics Coverage</h4>
-      <video width="100%" controls poster="images/sprint/sprint-1.png">
-        <source src="https://static01.nyt.com/packages/video/newsgraphics/2012/0803-match-sprint/cycling-new.mp4" type="video/mp4">
-      </video>
+      <img src="images/sprint/sprint-1.png" class="asset">
     </div>
     <div class="work">
       <h4 class="hed">NYT – Elections Coverage</h4>
-      <a href="https://www.nytimes.com/elections/2012/results/president.html">
-        <img src="images/election-2012/election-2012-1.png" class="asset">
-      </a>
+      <img src="images/election-2012/election-2012-1.png" class="asset">
     </div>
     <div class="work">
       <h4 class="hed">NYT – Girls Lead in Science Exam, but Not in the United States</h4>
-      <a href="https://archive.nytimes.com/www.nytimes.com/interactive/2013/02/04/science/girls-lead-in-science-exam-but-not-in-the-united-states.html"><img src="images/science/science-1.png" class="asset"></a>
+      <img src="images/science/science-1.png" class="asset">
     </div>
     <div class="work">
       <h4 class="hed">NYT – Snowfall</h4>
-      <a href="https://www.nytimes.com/projects/2012/snow-fall/index.html#/?part=tunnel-creek"><img src="images/snowfall/snowfall-1.png" class="asset"></a>
+      <img src="images/snowfall/snowfall-1.png" class="asset">
     </div>
     <!-- <div class="work">
       <h4 class="hed">Verily – Mental Health Study</h4>
@@ -338,7 +300,7 @@ var vis = function(){
       
       
       
-      this.ctx.fillStyle = "rgba(255,255,255,0.3)";
+      this.ctx.fillStyle = "rgba(255,255,255,0.6)";
 
 
       let i = 0
