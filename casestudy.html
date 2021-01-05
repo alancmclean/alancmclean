@@ -107,7 +107,7 @@ h3{
 @media only screen and (max-width: 800px) {
 
   .container{
-    padding: 4em 2em;
+    padding: 0 1.5em 1.5em;
   }
 
   .col-a, .col-b, .col-c{
@@ -158,7 +158,7 @@ h3{
     <p><strong style="color:#A2BEFA">I am the Design Lead for user wellbeing at Google.</strong> In this role I develop visual and interaction design standards for Google products that affect wellbeing. In this role I mentor and manage staff, focus and prioritize design efforts and serve as a subject matter expert for Google. </p>
 
 
-    <p>With intense public and regulatory scrutiny around the role of technology, Google needed to prove that wellbeing was a priority. I initiated and led streams of work that resulted in fundamental changes to Google’s design infrastructure and product ecosystem. This effort is now in the extend phase as seen below:</p>
+    <p>With intense public and regulatory scrutiny around the role of technology, Google needed to prove that wellbeing was a priority. I initiated and led streams of work that resulted in fundamental changes to Google’s design infrastructure and product ecosystem. This effort is now in the <strong style="color:#A2BEFA">Extend phase</strong> as seen below:</p>
 
     <img class="process" src="images/google/paths.svg"  style = "width:110%; margin-left:-5%; margin-bottom:2em;"/>
 
@@ -166,45 +166,45 @@ h3{
     <h3>LEADERSHIP & MANAGEMENT</h3>
 <!--     <p>With a company wide goal to prioritize user wellbeing, many design teams were clamoring to deliver on the mission. In anticipation of this, I harmonized Google work streams to ease questions of roles and responsibility into the following areas: </p>
  -->    
-    <p>With a company wide goal to prioritize user wellbeing, there was a need to harmonze Google's UX workstreams(of which there many: Android, Youtube, Nest, ChromeOS) to ease questions of roles and responsibility. I coordinated the re-organization of work into three district streams:
+    <p>With a company wide goal to prioritize user wellbeing, there was a need to harmonize Google's UX workstreams(of which there many: Android, Youtube, Nest, ChromeOS) to resolve roles and responsibilities. I coordinated the re-organization of work into three district streams:
 
 
     <ul>
       <li><strong style="color:#A2BEFA">PLATFORM:</strong> Coordinate user wellbeing signals for Android.</li>
-      <li><strong style="color:#A2BEFA">SYSTEMS:</strong> Core design components used by Google products.</li>
+      <li><strong style="color:#A2BEFA">SYSTEMS:</strong> Define core design components used by Google products.</li>
       <li><strong style="color:#A2BEFA">CORE RESEARCH:</strong> Develop core knowledge on user wellbeing through research.</li>
     </ul>
 
     <img src="images/google/process.png" />
-    <p>Under my direction, a team of 10 designers and researchers developed the visual design standards and patterns for Google's consumer products that affect wellbeing. I accomplished this by:</p>
+    <p>Under my direction, a team of 10 designers and researchers developed the visual design standards and patterns for Google's consumer products. This involved:</p>
     
     <ul>
-      <li>Leading regular Google executive leadership alignment sessions to ensure institutional support.</li>
-      <li>Coordinating collaboration and sprinting with Google News to develop principles, prototypes, and new design patterns to address overuse in content experiences. </li>
-      <li>Served as the primary POC with 1P(Assistant, News, Search, Nest, YT) and 3P(Tikok, Twitter, Medium) products on how to adapt products at night, leading numerous sprints, workshops and 3P sessions aiming to build partnerships.</li>
+      <li>Leading Google executive alignment sessions to develop institutional support.</li>
+      <li>Coordinating collaboration with partner team such as Google News to develop principles, prototypes, and new design patterns. </li>
+      <li>Serving as the primary POC with 1P(Assistant, News, Search, Nest, YT) and 3P(Tikok, Twitter, Medium) products, leading numerous sprints, workshops to build partnerships.</li>
     </ul>
 
 
     <h3>THE GUIDANCE</h3>
-    <p>After partnering and reviewing with countless design teams at Google, we now have a reference guide for how our products should adapt to facilitate disconnection at night. The principles guiding this work included:</p>
+    <p>Our product sprints and close working relationships across Google allow us to develop a reference guide for how our products should adapt to facilitate disconnection at night. The core design principles guiding our design adaptions were:</p>
 
     <div class="col-a">
       <img class="inline" src="images/google/time.gif">
-      <div class="caption">01 – Show Time & Space</div>
+      <div class="caption">Show Time & Space</div>
     </div>
 
     <div class="col-b">
       <img class="inline" src="images/google/limit.gif">
-      <div class="caption">02 – Limit the Infinite</div>
+      <div class="caption">Limit the Infinite</div>
     </div>
 
     <div class="col-c">
       <img class="inline" src="images/google/reduce.gif">
-      <div class="caption">03 – Reduce Stimulation</div>
+      <div class="caption">Reduce Stimulation</div>
     </div>
 
     
-    <p class="interstitial">While I can't reveal all aspects of the guidance here, I can share notable design patterns that emerged included <strong style="color:#A2BEFA">end states</strong> to create natural conclusions to product experiences...</p>
+    <p class="interstitial">Notable design patterns that emerged included <strong style="color:#A2BEFA">end states</strong> to create natural conclusions to product experiences...</p>
 
     <video controls poster="images/google/cover.png">
       <source src="images/google/anatomy.mp4" type="video/mp4"></source>  
@@ -224,114 +224,9 @@ h3{
   </section>
 </div>
 
-<script type="text/javascript">
 
-var vis = function(){
-  return{
-    // a: Math.random() + -3.0,
-    a: (Math.random() * (-3.0 - -2.3) + -2.3).toFixed(4),
-    a2: -2.1763,
-    b: 1.5377,
-    c: -0.3161,
-    d: -2.3095,
-    batchSize: 2000,
-
-    init: function(){
-      let box     = document.querySelector('.animation');
-      this.width  = parseInt(box.clientWidth, 10);
-      this.height = parseInt(window.innerHeight, 10);
-      let canvas  = document.querySelector('.paintarea');
-      let dpr = window.devicePixelRatio || 1;
-
-
-
-      canvas.width    = this.width * dpr
-      canvas.height   = this.height * dpr
-      canvas.style.width = this.width;
-      canvas.style.height = this.height;
-
-      this.ctx    = canvas.getContext('2d');
-      this.ctx.translate(this.width * 0.9, this.height * 1.5);
-      this.scale = (this.height / Math.PI) * 2.5;
-
-      this.ctx.scale(this.scale, this.scale);
-
-
-      // need to fix this somehow, so hacky
-      if(this.a   > -2.3){
-        this.a = 2.876
-      }
-      this.start  = 0;
-      this.step   = 0;
-      this.x0     = 0;
-      this.y0     = 0;
-      this.x1;
-      this.y1;
-
-      this.ctx.globalCompositeOperation = 'multiply';
-
-      requestAnimationFrame(this.render.bind(this))
-
-    },
-    render: function(timestamp){
-      if (this.start === undefined){
-        this.start = timestamp;
-      }
-      // console.log(this.x0)
-      const elapsed = timestamp - this.start;
-      
-      
-      // this.ctx.fillStyle = '#111'
-      // this.ctx.fillRect(0, 0, this.width , this.height);
-
-      // console.log(this.width)
-      
-      // this.ctx.fillStyle = "#111";
-      
-      
-      
-      this.ctx.fillStyle = "rgba(255,255,255,0.3)";
-
-
-      let i = 0
-      while (i < this.batchSize) {
-        this.x1 = Math.sin(this.a * this.y0) + this.c * Math.cos(this.a * this.x0);
-        this.y1 = Math.sin(this.b * this.x0) + this.d * Math.cos(this.b * this.y0);
-        this.ctx.fillRect((this.x0 = this.x1), (this.y0 = this.y1), 0.001, 0.001);
-        i++
-      }
-      if(elapsed < 10000){
-        requestAnimationFrame(this.render.bind(this))
-      }
-      
-    },
-    reset: function(){
-      this.ctx.save()
-
-      this.ctx.setTransform(1,0,0,1,0,0);
-      this.ctx.clearRect(0,0, this.ctx.canvas.width, this.ctx.canvas.height);
-      this.a = (Math.random() * (-3.0 - -2.3) + -2.3).toFixed(4)
-
-      this.ctx.restore()
-    }
-  }
-}();
-
-// vis.init();
-
-
-</script>
   
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-88525006-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 
 
