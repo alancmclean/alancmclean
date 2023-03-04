@@ -65,6 +65,14 @@ body{
   display:block;
 }
 
+#footer{
+  position:fixed;
+  bottom:20px;
+  text-transform:uppercase;
+  color:hsla(222,41%,8%,.49);
+  font-size:.8rem;
+}
+
 @media only screen and (max-width: 800px) {
   #content{
     display:block;
@@ -84,5 +92,8 @@ body{
   }
   #description h1{
     font-size:1.7rem;
+  }
+  #footer{
+    display:none;
   }
 }
