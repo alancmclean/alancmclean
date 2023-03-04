@@ -33,21 +33,21 @@ body{
 #description h1{
   line-height: 140%;
   letter-spacing: .04rem;
-  color:#0C111D;
+  color:hsla(222,41%,8%,.79);
 }
 
 #description p{
   font-weight: 300;
   /*color:rgba(0,0,0,.77);*/
-  color: #0C111D;
+  color:hsla(222,41%,8%,.79);
   line-height: 150%
   letter-spacing: -0.02rem;
   margin-bottom: 1.8rem;
   font-size:1.2rem;
 }
 
-#description a{
-  color:#000;
+#description a,#description a:visited{
+  color:hsla(222,41%,8%,.79);
   font-weight:200;
   text-underline-offset: 0.25rem;
 }
