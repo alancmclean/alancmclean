@@ -32,7 +32,7 @@ body{
 
 #description h1{
   line-height: 140%;
-  letter-spacing: .03rem;
+  letter-spacing: -.03rem;
   color:hsla(222,41%,8%,.79);
   font-weight:400;
 }
