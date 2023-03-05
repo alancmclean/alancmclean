@@ -36,6 +36,7 @@ body{
   letter-spacing: -.03rem;
   color:hsla(222,41%,8%,.79);
   font-weight:400;
+  font-size:2.4rem; 
 }
 
 #description p{
@@ -90,10 +91,10 @@ body{
     padding:0 0 2rem;
   }
   #description p{
-    font-size:1.3rem;
+    font-size:1.2rem;
   }
   #description h1{
-    font-size:1.7rem;
+    font-size:2rem;
   }
   #footer{
     display:none;
