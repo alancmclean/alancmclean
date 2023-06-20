@@ -43,7 +43,7 @@ body{
   font-weight: 300;
   /*color:rgba(0,0,0,.77);*/
   color:hsla(222,41%,8%,.79);
-  line-height: 150%
+  line-height: 170%;
   letter-spacing: -0.02rem;
   margin-bottom: 1.8rem;
   font-size:1.1rem;
@@ -76,6 +76,16 @@ body{
   font-size:.8rem;
 }
 
+@media only screen and (max-width: 1100px) {
+  #description{
+    padding-top: 1rem;
+  }
+  #description h1{
+    font-size: 2.1rem;
+  }
+
+}
+
 @media only screen and (max-width: 800px) {
   #content{
     display:block;
@@ -91,7 +101,7 @@ body{
     padding:0 0 2rem;
   }
   #description p{
-    font-size:1.2rem;
+    font-size:1.1rem;
   }
   #description h1{
     font-size:2rem;
