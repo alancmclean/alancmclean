@@ -5,6 +5,9 @@ body{
   padding: 0;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
+
+  color:rgba(0,0,0,.65);
+
 }	
 
 #wrap{
@@ -27,23 +30,28 @@ body{
   width: 53%;
   box-sizing: border-box;
   padding: 4rem 5% 4rem 0;
-  color:rgba(0,0,0,.77);
+  color:rgba(0,0,0,.65);
   margin-right: 3rem;
 }
 
 #description h1{
-  line-height: 140%;
-  letter-spacing: -.03rem;
-  color:hsla(222,41%,8%,.79);
-  font-weight:400;
-  font-size:2.4rem; 
+
+      line-height: 140%;
+    letter-spacing: -.03rem;
+    color:rgba(0,0,0,.77);
+    font-weight: 400;
+    font-size: 2.4rem;
+
+
 }
 
 #description p{
   font-weight: 300;
   /*color:rgba(0,0,0,.77);*/
-  color:hsla(222,41%,8%,.79);
-  line-height: 170%;
+
+  color: #0C111D;
+  line-height: 150%;
+
   letter-spacing: -0.02rem;
   margin-bottom: 1.8rem;
   font-size:1.05rem;
@@ -60,12 +68,15 @@ body{
   width: 35%;
   box-shadow: 0 0 52px hsla(221,41%,19%,.08);
   /*flex:2;*/
+/*  margin-top:5rem;*/
 }
 
 #art img{
   width: 100%;
   object-fit: cover;
   display:block;
+/*  margin-bottom: 20px;*/
+/*  border-radius: 16px;*/
 }
 
 #footer{
@@ -95,6 +106,7 @@ body{
   }
   #art{
     width: 100%;
+/*    margin-top: 0;*/
   }
   #description{
     width: 100%;
